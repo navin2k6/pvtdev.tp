@@ -1,0 +1,110 @@
+﻿@model TalentsProfile.DTO.Login
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/ui/css/bootstrap.css">
+    <link rel="stylesheet" href="~/ui/js/bootstrap.min.js" />
+    @*<link rel="stylesheet" type="text/css" href="~/ui/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/ui/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/ui/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/ui/css/owl.theme.default.css">
+    <link rel="stylesheet" href="~/ui/css/style.css" />
+    <link rel="stylesheet" href="~/ui/css/bootstrap-social.css">
+    <script type="text/javascript" src="~/ui/js/jquery-1.11.0.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="@ViewBag.BodyClass">
+    <header id="header">
+        <div class="container">
+            <h1>
+                <a href="/">
+                    Talent's <span>Profile</span><p id="slogan">Join! Let's discover the world.</p>
+                </a>
+            </h1>
+            <nav id="navbar-secondary">
+            </nav>
+        </div>
+        <hr />
+    </header>
+
+    <section class="content-wrapper">
+        <div class="container">
+            <div class="row" style="padding-top:5%; width:50%; margin:auto">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please enter your:</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="/adm/login/index" method="post">
+                            @{
+                                var displayBlock = "none";
+                                if (!(Html).ViewData.ModelState.IsValid)
+                                {
+                                    displayBlock = "block";
+                                }
+
+                                <div id="msgAlert" role="alert" style="display:@displayBlock" class="alert alert-danger alert-dismissible">
+                                    @Html.ValidationSummary()
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            }
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">
+                                        User Id:
+                                    </label>
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(email => email.Email, new
+                                   {
+                                       name = "email",
+                                       id = "email",
+                                       @class = "form-control",
+                                       @placeholder = "Email",
+                                       @maxlength = "50",
+                                       type = "email",
+                                       onblur = "ValidateCtrl('email','Email')",
+                                       @autocomplete = "on"
+                                   })
+                                        @*<input type="email" placeholder="Email" name="email" id="email" class="form-control" maxlength="50" onblur="ValidateCtrl('email','Email')"
+                                            autocomplete="on" />*@
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">
+                                        Password:
+                                    </label>
+                                    <div class="col-sm-8">
+                                        @Html.PasswordFor(password => password.Password, new
+                                   {
+                                       @placeholder = "Password",
+                                       @name = "password",
+                                       @id = "password",
+                                       @class = "form-control",
+                                       @maxlength = "15"
+                                   })
+                                        @*<input type="password" placeholder="Password" name="password" id="password" class="form-control" maxlength="20" />*@
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <button type="submit" class="btn btn-primary btn-sm" id="signIn">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    @*<div class="panel-footer"></div>*@
+                </div>
+                Copyright © 2014-20 Talentsprofile.com, all rights reserved.
+            </div>
+        </div>
+    </section>
+</body>
+</html>

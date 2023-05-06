@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Status";
+    Layout = "~/Views/Shared/Public.cshtml";
+
+    if (TempData["status"] == "REG_OK")
+    {    
+        
+    <h3>
+        @TempData["reg_title"]
+    </h3>
+@*<hr />*@
+    <div class="alert alert-success" style="display: block">
+        <p>
+            @TempData["reg_msg"]
+            <br />
+        </p>
+    </div>
+    
+    <div class="form-group">
+        <div class="col-sm-offset">
+            <form id="formStatus" action="index" method="post" role="form">
+            <button type="submit" class="btn btn-primary btn-sm">
+                Continue</button>
+            </form>
+        </div>
+    </div>
+    }
+
+    else
+    {
+        Response.Redirect("../home/index");
+    }
+}

@@ -1,0 +1,99 @@
+﻿@{
+    ViewBag.Title = "Jobs";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@Html.Partial("../Shared/SignInLink")
+<section class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h4>Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies.."</h4>
+                <form class="form-horizontal" role="form">
+                    <table class="table">
+                        <tr>
+                            <td style="width: 20%">
+                                <img src="assets/images/user.png" alt="..." class="img-rounded">
+                            </td>
+                            <td style="width: 80%">
+                                <p>
+                                    Skills required: C#, ASP.NET, MVC, Microsoft technologies etc.
+                                </p>
+                                <p>
+                                    Team lead for IBM, Bangalore
+                                </p>
+                                <p>
+                                    Description: Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total
+                15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found
+                for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET,
+                MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft
+                technologies..
+                                </p>
+                                <p>
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        Apply</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%">
+                                <img src="assets/images/user.png" alt="..." class="img-rounded">
+                            </td>
+                            <td style="width: 80%">
+                                <p>
+                                    Skills required: C#, ASP.NET, MVC, Microsoft technologies etc.
+                                </p>
+                                <p>
+                                    Sr. Associate in Accenture, Bangalore/Pune/Gurgaon
+                                </p>
+                                <p>
+                                    Description: Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total
+                15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found
+                for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET,
+                MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft
+                technologies..
+                                </p>
+                                <p>
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        Apply</button>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 20%">
+                                <img src="assets/images/user.png" alt="..." class="img-rounded">
+                            </td>
+                            <td style="width: 80%">
+                                <p>
+                                    Skills required: C#, ASP.NET, MVC, Microsoft technologies etc.
+                                </p>
+                                <p>
+                                    Project Manager in Arcmatics Technologies, Gurgaon
+                                </p>
+                                <p>
+                                    Description: Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total
+                15 jobs found for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found
+                for "C#, ASP.NET, MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET,
+                MVC, Microsoft technologies Total 15 jobs found for "C#, ASP.NET, MVC, Microsoft
+                technologies..
+                                </p>
+                                <p>
+                                    <button type="submit" class="btn btn-success btn-sm">
+                                        Apply</button>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="col-md-5">
+                @{
+                    if (Session["ticket"] == null)
+                    {
+                    @Html.Partial("../Shared/SideBar")
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

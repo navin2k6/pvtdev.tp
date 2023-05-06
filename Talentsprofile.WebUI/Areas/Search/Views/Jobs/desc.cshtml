@@ -1,0 +1,137 @@
+﻿@{
+    if (Request.Cookies["talentsprofileUser"] == null)
+    {
+        Layout = "~/Views/Shared/Public.cshtml";
+    }
+    else
+    {
+        Layout = "../../../Talent/Views/Shared/Talents.cshtml";
+    }
+
+    //ViewBag.Title = "Sr. Software Engineer - Tech lead, Bangalore : Talentsprofile.com";
+}
+
+<div class="clearfix">&nbsp;</div>
+<section class="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="padding-right:5%">
+                <div id="msgMsgAlert" role="alert" style="display: none" class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div id="progressContainer" class="job-details" style="display:block">
+                    <span>Please wait...</span>
+                    <div class="progress" style="height:4px">
+                        <div id="progressbarValue" class="progress-bar" role="progressbar" aria-valuenow="0"
+                             aria-valuemin="0" aria-valuemax="100" style="width:0%; height:5px">
+                            <span class="sr-only">0% Complete</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="divProfile" class="job-details" style="display:none">
+
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="col-lg-3">
+                        @*<img src="~/ui/images/company.png" height="110" width="120" style="margin-top:25px" alt="Company logo missing" />*@
+                        <img src="#" height="auto" width="150" style="margin-top:40px; vertical-align:bottom; text-align:center" id="compLogoUri" alt="logo missing" />
+                    </div>
+                    <div class="col-lg-6">
+                        <h2 id="pgtitle"></h2>
+                        <div><span id="Organization"></span>,&nbsp;&nbsp;<i class="fa fa-map-marker"></i> <span id="Location" name="Location">--</span></div>
+                        <div>
+                            Designation: <span id="Designation"></span>
+                            <br /><span id="Experience">--</span>
+                        </div>
+                    </div>
+                    <div class="clearfix"><h3></h3></div>
+                    <strong>Required Skills Set:</strong> <span id="skillSet"></span>
+                    <div><strong>Qualification: </strong><span id="Qualification">Not provided</span></div>
+                    <div class="clearfix"><h3></h3></div>
+                    <div id="jobDesc" style="text-align:justify"></div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div id="jobRoles" style="text-align:justify"></div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div id="aboutOrg" style="text-align:justify"></div>
+                    <div class="clearfix">&nbsp;</div>
+                    @*<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=http%3A%2F%2Fieee802%2Eorg%3A80%2Fsecmail%2FdocIZSEwEqHFr%2Edoc' width='100%' height='100%' frameborder='0'>This is an embedded <a target='_blank' href='http://office.com'>Microsoft Office</a> document, powered by <a target='_blank' href='http://office.com/webapps'>Office Online</a>.</iframe>*@
+                </div>
+            </div>
+            <div class="col-md-4">
+                @*<a class="apply-thisjob" id="applyForJob" href="#" title=""><i class="fa fa-paper-planee"></i>Apply for job</a>*@
+                <div class="clearfix">&nbsp;</div>
+                <div class="widget">
+                    <h4>Overview</h4>
+                    <div class="job-overview">
+                        <ul>
+                            <li>
+                                <div id="NotificationDtl" class="btn btn-primary btn-xs" style="width:70%">
+                                    <span>
+                                        <a id="NotificationDtlUri" href="#" target="_blank" style="color:#fff">
+                                            <i class="fa fa-external-link" aria-hidden="true" style="top:1px; color:#fff">&nbsp;</i>&nbsp;Detailed Notification
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="clearfix">&nbsp;</div>
+                                <div>
+                                    <span id="JobCode">- -</span>
+                                    <span id="JobType">- -</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-money"></i>
+                                <div>
+                                    <strong>Compansation:</strong>
+                                    @*<i class="fa fa-inr" style="top:2px"></i>*@
+                                    <span id="Compensation">- -</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar"></i>
+                                <div>
+                                    <strong>Important Dates:</strong>
+                                    <span id="PostedDate">Posted on: - -</span>
+                                    <span id="JobExpireDate">Last date: - -</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <div>
+                                    <strong>Contacts:</strong>
+                                    @*<span id="ContactPerson"></span>*@
+                                    <span id="HrEmail">- -</span>
+                                    <span id="HrPhone">- -</span>
+                                    <span id="CompUri">- -</span>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <span name="Location">- -</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix">&nbsp;</div>
+<script type="text/javascript" src="../../../ui/js/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../ui/jsviews/SearchJob.js"></script>
+<link rel="stylesheet" href="../../../ui/css/jquery-ui.css" />
+<script type="text/javascript" src="../../../ui/jsviews/searching-keywords.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        LoadJobDetail();
+        UpdateJobHistory();
+    });
+
+    $('#applyForJob').click(function () {
+        PostJobApplication();
+    });
+</script>

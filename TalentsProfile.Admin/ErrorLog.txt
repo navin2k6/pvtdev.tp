@@ -1,0 +1,24 @@
+Date: 27-Jan-21 1:29:38 PM
+
+Error: Invalid user
+
+Source: Arcmatics.Authentication
+
+Stack trace:    at Arcmatics.Authentication.GetUSId.GetUserTocken() in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\Arcmatics.Authentication\UserTicket.cs:line 112
+   at TalentsProfile.BAL.Employer.Jobs..ctor(HttpCookie cookie) in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\TalentsProfile.BAL\EmployerDataAccess.cs:line 22
+   at Talentsprofile.Admin.Controllers.JobsController.GetPostedJob(Boolean iswalkins, String editId) in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\TalentsProfile.Admin\Controllers\JobsController.cs:line 58
+
+-----------------------------------------------------------------------------------------------------------------
+
+Date: 27-Jan-21 1:29:45 PM
+
+Error: Invalid user
+
+Source: Arcmatics.Authentication
+
+Stack trace:    at Arcmatics.Authentication.GetUSId.GetUserTocken() in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\Arcmatics.Authentication\UserTicket.cs:line 112
+   at TalentsProfile.BAL.Employer.Jobs..ctor(HttpCookie cookie) in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\TalentsProfile.BAL\EmployerDataAccess.cs:line 22
+   at Talentsprofile.Admin.Controllers.JobsController.GetPostedJob(Boolean iswalkins, String editId) in E:\Development\TalentsProfile\User\TalentsProfile_v1.5\TalentsProfile.Admin\Controllers\JobsController.cs:line 58
+
+-----------------------------------------------------------------------------------------------------------------
+

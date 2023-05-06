@@ -1,0 +1,215 @@
+﻿@{
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+
+<section id="jobs-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="widget">
+                    @*<h3>Search Jobs</h3>*@
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="job-overview">
+                        <ul>
+                            <li>
+                                <i class="fa fa-list-ul"></i>
+                                <div>
+                                    <strong>Skill Set:</strong>
+                                    <input type="email" class="form-control" id="keywords" placeholder="Enter keywords" />
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <div>
+                                    <strong>Interested City:</strong>
+                                    <input type="email" class="form-control" id="city" placeholder="City" />
+                                    @*<span class="location" itemprop="jobLocation"><a class="google_map_link" href="http://maps.google.com/maps?q=Manchester+Road%2C+Sheffield%2C+United+Kingdom&amp;zoom=14&amp;size=512x512&amp;maptype=roadmap&amp;sensor=false" target="_blank">Manchester Road, Sheffield, United Kingdom</a></span>*@
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-calendar-minus-o"></i>
+                                <div>
+                                    <strong>Category:</strong>
+                                    <div class="clearfix"></div>
+                                    <input type="checkbox" name="postedBy" value="walkins"
+                                           id="chkWalkins" />
+                                    Walk-in events<br />
+                                    <input type="checkbox" name="postedBy" value="company" id="chkCompany" />
+                                    Posted by companies
+                                    <br />
+                                    <input type="checkbox" name="postedBy" value="consultant"
+                                           id="chkConsultant" />
+                                    Posted by consultants
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>Job type:</span>
+                                    <select class="form-control" id="JobType" style="margin-bottom: 15px;">
+                                        <option value="">All</option>
+                                        <option value="7">Permanent/Full-time</option>
+                                        <option value="3">Contractual/Full-time</option>
+                                        <option value="6">Part-time</option>
+                                    </select>
+                                    <span>Posted in last:</span>
+                                    <select class="form-control" id="postedOn" style="margin-bottom: 15px">
+                                        <option value="" selected="selected">All</option>
+                                        <option value="7">7 days</option>
+                                        <option value="15">15 days</option>
+                                        <option value="30">30 days</option>
+                                    </select>
+                                </div>
+                            </li>
+
+                            <li>
+                                <i class="fa fa-line-chart"></i>
+                                <div>
+                                    <strong>Experience:</strong>
+                                    <span>Minimum:</span>
+                                    <select class="form-control" id="minExpr">
+                                        <option value="-1" selected="selected">Select</option>
+                                        <option value="0">Fresher</option>
+                                        <option value="1">1 year</option>
+                                        <option value="2">2 years</option>
+                                        <option value="3">3 years</option>
+                                        <option value="4">4 years</option>
+                                        <option value="5">5 years</option>
+                                        <option value="6">6 years</option>
+                                        <option value="7">7 years</option>
+                                        <option value="8">8 years</option>
+                                        <option value="9">9 years</option>
+                                        <option value="10">10 years</option>
+                                        <option value="11">11 years</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span>Maximum:</span>
+                                    <select class="form-control" id="maxExpr">
+                                        <option value="0" selected="selected">Select</option>
+                                        <option value="1">1 year</option>
+                                        <option value="2">2 years</option>
+                                        <option value="3">3 years</option>
+                                        <option value="4">4 years</option>
+                                        <option value="5">5 years</option>
+                                        <option value="6">6 years</option>
+                                        <option value="7">7 years</option>
+                                        <option value="8">8 years</option>
+                                        <option value="9">9 years</option>
+                                        <option value="10">10 years</option>
+                                        <option value="11">11 years</option>
+                                        <option value="12">12 years</option>
+                                        <option value="13">13 years</option>
+                                        <option value="14">14 years</option>
+                                        <option value="15">15 years</option>
+                                        <option value="16">16 years</option>
+                                        <option value="17">17 years</option>
+                                        <option value="18">18 years</option>
+                                        <option value="19">19 years</option>
+                                        <option value="20">20 years</option>
+                                        <option value="21">Avobe 20 years</option>
+                                    </select>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>&nbsp;</span>
+                                    <button type="submit" class="btn btn-primary btn-sm" id="btnSearchAftrLogin">
+                                        Search
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8" id="af-left">
+                @*<div class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-8">
+                            </div>
+                            <div class="col-sm-4">
+                            </div>
+                        </div>
+                         <div style="width: 100%; margin-top: 20px; display: none" id="divAdvSearch">
+                            <div class="form-group">
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                                <div class="col-sm-4">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="height: 20px; width: 100%">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <span id="advSearchBtn" class="btn btn-link">Customize</span>
+                    </div>*@
+                <div style="width: 100%;">
+                    @Html.Partial("components/JobSearchReasult")
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript" src="../../../ui/jsviews/SearchJob.js"></script>
+<link rel="stylesheet" href="../../../ui/css/jquery-ui.css" />
+<script type="text/javascript" src="../../../ui/js/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../ui/jsviews/searching-keywords.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        //if (window.location.href.indexOf('key') > 0 || window.location.href.indexOf('loc') > 0)
+            ReadKeywords();
+
+        $('#liSearch').attr('class', 'active');
+        $('#liMyProf').attr('class', '');
+        $('#liMyResume').attr('class', '');
+        $('#liUser').attr('class', '');
+
+
+    });
+
+    $('#minExpr').click(function () {
+        try {
+            ManageExperienceSelectors(parseInt($('#minExpr').val()));
+        }
+        catch (e) {
+            $('#maxExpr').val(0);
+        }
+    });
+
+
+    /* Manage experience (min. & max.) selectors list items.*/
+    function ManageExperienceSelectors(val) {
+        var html = '';
+        if (val >= 0) {
+            val = val + 1;
+
+            for (i = val; i < (val + 10) ; i++) {
+                html = html + '<option value="' + i + '">' + ((i > 1) ? (i + ' years') : (i + ' year')) + '</option>';
+            }
+        }
+            /* To reset, when user selects 'select' option. */
+        else {
+            html = '<option value="0" selected="selected">Select</option>';
+            for (i = 1; i <= 20 ; i++) {
+                html = html + '<option value="' + i + '">' + ((i > 1) ? (i + ' years') : (i + ' year')) + '</option>';
+            }
+
+            html = html + '<option value="21">Avobe 20 years</option>';
+        }
+
+        $('#maxExpr').html(html);
+    }
+
+
+    $(document).on('click', '#btnViewJob', function () {
+        window.open('/search/jobs/desc/' + $('#btnViewJob').attr('job') + '?' + $('#btnViewJob').attr('key'), '_blank');
+    });
+
+</script>

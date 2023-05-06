@@ -1,0 +1,56 @@
+﻿@model TalentsProfile.DTO.JobSerachResult
+@{
+    ViewBag.Title = "Talentsprofile: serach most suitable job in your intresting locations.";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@Html.Partial("../Shared/SignInLink")
+<section class="search-wrapper">
+    <div class="container">
+        @using (Html.BeginForm("SearchJob", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <input type="text" name="jobkeyword" id="jobkeyword" class="form-control input-lg"
+                            placeholder="Job Ttile, keyword">
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-12">
+                        <input type="text" name="jobbylocation" id="jobbylocation" class="form-control input-lg"
+                            placeholder="City, State ">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            Search</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="form-group">
+                    <h4>Total 10 job(s) found for search keywords "C#, ASP.Net; Bangalore".</h4>
+                    <hr />
+                    <div class="row">
+                        <strong>Sr. Software Engineer, Microsoft technologies</strong>
+                        <p>
+                            Experience: 5-7 years of experience, Sr. Software engineer-II<br />
+                            Required Skills: C#, ASP.Net MVC 4.0, jQuery, WCF, SQL Server 2008<br />
+                            Job location: IBM, Bangalore<br />
+                            Required Sr. Software Engineer in Microsoft technologies having good communication
+                            and interpersonal skills, complete knowledge of SDLC, OOPs concepts, SOA experienced
+                            Candidates with minimum of 5 years of post qualification experience in .NET technologies..
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+<style>
+    .fakewindowcontain .ui-widget-overlay {
+        position: absolute;
+    }
+</style>
+
+<link href="../../Scripts/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+<script src="../../Scripts/jquery-1.10.2.js"></script>
+<script src="../../Scripts/jquery-ui-1.10.4.custom.js"></script>
+<script src="../../Scripts/Views/SearchJob.js"></script>

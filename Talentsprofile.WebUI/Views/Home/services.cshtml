@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "TalentsProfile Services";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@*@Html.Partial("../Shared/SignInLink")*@
+
+<div id="page-header">
+    <div class="container">
+        <h3 class="orange-color">What we do?</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="af-left">
+            <div class="widget">
+                <p><i class="fa fa-home"></i><a href="/"> Home </a>| Services</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left" style="padding-right:7%">
+                <div style="padding-left:5%">
+                    <p>
+                        1.	Talents Profile is completely free for candidates and does not charge against any of its services from candidates. In any case, anybody quotes direct or indirect fees in favor of Talents Profile for any of its services, request you not to rely on such and <a href="../contact">inform us</a> immediately.
+                    </p>
+                    <p>2.	Talents Profile is a non-profitable organization serves as a job portal. For any job descriptions, walk-ins, resume or profile, the person is solely responsible who has posted it. </p>
+                    <p>
+                        3.	Talents Profile tries their best to eliminate fraudulence, and invalid contents. However, it is user’s responsibility to analyze and verify it before to continue.  We believe, it is also their own interest to verify a particular thing before to process it.
+                    </p>
+                    <p>
+                        Therefore, any such claims will never be entertained, nor be considered, anyhow in any circumstances.
+                    </p>
+                    <p>4.	Information related to a posted job, walk-in, event, job description can be changed by the recruiters, and they reserve rights to close their requirement, or can update their requirements any time without prior notice.</p>
+                    <p>
+                        5.	Talents Profile neither involve in a selection process nor guarantees about any candidature. It is completely a responsibility of respective person.
+                    </p>
+                    <p>
+                        Therefore, at any circumstance, neither a candidate can claim for their selection nor an organization can claim for a candidature.
+                    </p>
+                    <p>
+                        6.	Any party – a candidate, or a hiring team, or an employer, or a consultancy, found a guilty or illegal activity, in all such cases, parties themselves are responsible to mitigate by their own mutual understanding and/or appropriate channel(s).
+                    </p>
+                    <p>In any of above cases, none of the party can claim to Talents Profile or their team.</p>
+                    <p>
+                        Also, in any of such legal activities, Talents Profile and their team neither responsible to be a part of any body nor will responsible to support any party.
+                    </p>
+                    <p>7.	Talents Profile reserves all rights to modify and update any policy, or terms and conditions, website information, at any time without prior notice to anybody.</p>
+                    <p>8.	When a user uses any information, and/or feature, of Talents Profile directly or indirectly, we consider the user is accepting all of our policies, terms and conditions.</p>
+                </div>
+            </div>
+            @{
+                if (Request.Cookies["talentsprofileUser"] == null)
+                {
+                    @Html.Partial("../Shared/SideBar")
+                }
+            }
+        </div>
+    </div>
+</section>

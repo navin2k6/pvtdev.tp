@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "About Talent's profile";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@*@Html.Partial("../Shared/SignInLink")*@
+
+<div id="page-header">
+    <div class="container">
+        <h3 class="orange-color">About Talent's Profile</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="af-left">
+            <div class="widget">
+                <p><i class="fa fa-home"></i><a href="/"> Home </a><i class="fa fa-angle-double-right" aria-hidden="true"></i> About</p>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="content-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left" style="padding-right:7%;">
+                <div class="clearfix">&nbsp;</div>
+                <p>
+                    Talent’s Profile is a global platform, focused to share information between talents and talent acquisition team.<br />
+                    An expert or a candidate with expertise domain knowledge, we call them a - “Talent”. <br />
+                    An organization/consultancy/hiring team, are categorized under “Talent acquisition team”.
+                </p>
+                <p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> Being a talent, in this platform you can get a lot, related to your career development without any costs.<p>
+                <p><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> Being an employer, you can do a lot to find a potential profile or better we call it as a talent’s profile. Manage and monitor job posts with downloadable managerial reports.</p>
+
+                <div style="padding:3%">
+                    <h2 style="color:#ffc000">Who is a Talent?</h2>
+                    <hr />
+                    <p>Any user, who has skill(s) to do something in a right way, and is looking for a right job opportunity.</p>
+                    <ul>
+                        <li>If you are a skilled full person and looking for job opportunities, to boost up your professional career and/or open to discover challenging opportunities with leading organizations.</li>
+                        <li>If you are a graduated person and looking for a new opportunity to establish your career in your stream.</li>
+                        <li>If you are looking for a support related to resume, interviews, consultancies, organizations, career or similar in finding your dream job.</li>
+                        <li>If you are a potential candidate but facing issues in resume selections processes.</li>
+                    </ul>
+                    <p>
+                        Join us and let us help you to get your dream job.<br />
+                        Create a profile, and download professional resume immediately. Share your profile with hiring teams, search and apply verified jobs, get walk-in notifications, explore hiring companies and consultancies, get resume development tips, interview tips, career guides, get in touch with a mentor, FAQs, and many related stuffs those really helpful to build your career.
+                    </p>
+                    <h4>&nbsp;</h4>
+                    <h2 style="color:#ffc000">Talent Acquisition Team</h2>
+                    <hr />
+                    <p>
+                        Hiring team – an organization/consultancy/independent body/talent acquisition team, are categorized under “employer”. An employer can post jobs, download profiles, walk-in events, invite candidates for an event, enlist candidates who are joining and willing to join the event. Promote a post to reach it out to maximum relevant candidates, to get more desired profiles. Set promotions based on - geographical location, skills, education, domain, experience etc.
+                    </p>
+                    <p>Automated tools provided to manage and automate most of manual activities commonly done by hiring teams.</p>
+                    <p>Control over duplicate profiles and keep track on candidatures before or after processing of a profile.</p>
+                    <p>Option to post job advertisements by an independent body. This is provided only to share valid job information. Candidates must verify it before proceeding to apply.</p>
+                </div>
+                <p>
+                    In any circumstance, if you find any suspicious or incomplete information about – a profile, employer, consultancy or any job advertisement, article posted in this platform, request you to please report it to us.<br />
+                    Talentsprofile.com admin team monitors system activities, to deliver relevant and potential information as well to eliminate fraudulences. In any case, if we found a suspicious or misleading information, Talentsprofile.com reserves all rights to remove such content immediately without any prior notice.
+                </p>
+
+                <p>Happy hunting!!</p>
+                <div class="clearfix">&nbsp;</div>
+            </div>
+            @{
+                if (Request.Cookies["talentsprofileUser"] == null)
+                {
+                    @Html.Partial("../Shared/SideBar")
+                }
+            }
+        </div>
+    </div>
+</section>

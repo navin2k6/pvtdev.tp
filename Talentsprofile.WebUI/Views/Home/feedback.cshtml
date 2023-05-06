@@ -1,0 +1,115 @@
+﻿@using CaptchaMvc.HtmlHelpers;
+
+@{
+    ViewBag.Title = "Feedback to Talent's Profile";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+<div id="page-header-feedback">
+    <div class="container">
+        <h3></h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="af-left">
+            <div class="widget" style="padding:0 50px;">
+                <p><i class="fa fa-home"></i><a href="/"> Home </a>| Feedback</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left">
+                <div class="widget" style="padding:0 50px;">
+                    <div id="process" style="display: none" class="alert alert-link" role="status">
+                    </div>
+                    <div id="msgAlertContact" role="alert" style="display: none" class="alert alert-danger alert-dismissible">
+                        <span id="msgStatus"></span>
+                    </div>
+                    <p>Your feedback is important to us. Please feel free and help us to make it better.</p>
+                    @using (Html.BeginForm())
+                    {
+                        <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Your name" onfocus="DismissAlert()" required />
+                                <div class="clearfix">&nbsp;</div>
+                                <select class="form-control" id="feedbackType" name="feedbackType" style="margin-bottom: 15px;" onfocus="DismissAlert()" required>
+                                    <option value="" selected>Select</option>
+                                    <option value="Suggestion">Suggestion</option>
+                                    <option value="Abuse">Abuse</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="clearfix">&nbsp;</div>
+                                <textarea rows="10" cols="20" class="form-control" id="txtMessage" name="txtMessage" onfocus="DismissAlert()" placeholder="Feedbak message"></textarea>
+                                @Html.Captcha("Try another", "Enter displayed code", 5)
+                    }
+
+                    <div class="clearfix">&nbsp;</div>
+                    <button type="submit" class="btn btn-primary" id="btnSubmitMsg">
+                        Submit
+                    </button>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+            </div>
+            @{
+                if (HttpContext.Current.Request.Cookies["talentsprofileUser"] == null)
+                {
+                    @Html.Partial("../Shared/SideBar")
+                }
+            }
+        </div>
+    </div>
+</section>
+
+<link href="/ui/css/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript">
+
+    $('#btnSubmitMsg').click(function () {
+        DismissAlert();
+        var name = $("#txtName").val();
+        var subject = $("#feedbackType").children('option:selected').text();
+        var msg = $("#txtMessage").val();
+
+        if (name == '' || subject == '' || msg == '') {
+            $('#msgStatus').html('Invalid! All fields are required.');
+            $('#msgAlertContact').show();
+        }
+        else {
+            $('#process').html('<img src="../ui/images/process.gif" height="22px" width="22px" /><span style="padding-left:10px; font-size:1.2em">Please wait...</span>');
+            $('#process').show();
+            $.ajax({
+                url: '/PostFeeback',
+                type: 'POST',
+                //data: { "Name": name, "Subject": subject, "Message": msg },
+                data: $('form').serialize(),
+                datatype: "json",
+                contenttype: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#process').html('');
+                    $('#process').hide();
+                    if (result.Code == 200) {
+                        $('#msgAlertContact').attr("class", "alert alert-success alert-dismissible");
+                        $("#txtName").val('');
+                        $("#feedbackType").val('');
+                        $("#txtMessage").val('');
+                        $("#CaptchaInputText").val('');
+                    }
+
+                    $('#msgStatus').html(result.Description);
+                    $('#msgAlertContact').show();
+                },
+                error: function () {
+                    $('#process').html('');
+                    $('#process').hide();
+                }
+            });
+        }
+    });
+
+    function DismissAlert() {
+        $('#msgAlertContact').attr("class", "alert alert-danger alert-dismissible");
+        $('#msgStatus').html('');
+        $('#msgAlertContact').hide();
+    }
+</script>

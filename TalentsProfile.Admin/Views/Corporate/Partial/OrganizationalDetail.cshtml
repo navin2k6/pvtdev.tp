@@ -1,0 +1,201 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title">Organization Basic Information</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" name="btnClose">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div id="msgAlert" role="alert" style="display: none" class="alert alert-warning alert-dismissible ">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-horizontal">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-10" id="userAlertMsgBody">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                        Name:
+                    </label>
+                    <div class="col-sm-8" id="div_companyname">
+                        <input type="text" class="form-control" placeholder="Company name" maxlength="70" name="companyname" id="companyname" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                        Address:
+                    </label>
+                    <div class="col-sm-8" id="div_address">
+                        <textarea class="form-control" placeholder="Geographical address (max 125 chars)"
+                                  maxlength="125" name="companyAddress" id="companyAddress"
+                                  rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                    </label>
+                    <div class="col-sm-4" id="div_address">
+                        <input type="text" class="form-control" placeholder="City name" maxlength="50" name="companyCity" id="companyCity" />
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="companyCountry" id="companyCountry">
+                            <option value="0" selected="selected">Select country</option>
+                            <option value="10" selected="selected">Australia</option>
+                            <option value="81" selected="selected">India</option>
+                            <option value="146" selected="selected">Philippines</option>
+                            <option value="164" selected="selected">Singapore</option>
+                            <option value="205" selected="selected">United States of America</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="url" class="form-control" placeholder="Website" maxlength="60" name="companyUri" id="companyUri" />
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" placeholder="Logo Uri" maxlength="100" name="companyLogoUri" id="companyLogoUri" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                        Functional Area:
+                    </label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="functionalArea" id="functionalArea">
+                            <option value="0" selected="selected">Select domain</option>
+                            <option value="10">Accounting/Audit</option>
+                            <option value="9">Advertising/Public Relations/Media</option>
+                            <option value="11">Arts/Entertainment</option>
+                            <option value="8">Banking/Finance/Insurance</option>
+                            <option value="31">CAD/CAM/Hardware Design</option>
+                            <option value="13">Civil Engineering/Construction/Real Estate</option>
+                            <option value="12">Clerical/Administrative</option>
+                            <option value="20">Doctors/Nursing/Pharma</option>
+                            <option value="16">Education/Training/Institute</option>
+                            <option value="17">Eloctronics/Electrical Engineering</option>
+                            <option value="1">Engineering Aircraft/Aerospace</option>
+                            <option value="18">Government/PSU/NGO/Military</option>
+                            <option value="19">Healthcare/Medicine/Cosmetics</option>
+                            <option value="21">Hospitality/Travel/Hotels</option>
+                            <option value="22">Human Resources/Consultancy</option>
+                            <option value="24">IT - Internet/Cyber Security</option>
+                            <option value="3">IT - Software Engineering/Development/Programming</option>
+                            <option value="27">IT - Telecommunications</option>
+                            <option value="2">IT- Hardware and Networking</option>
+                            <option value="32">IT- Infrastructure</option>
+                            <option value="4">IT- KPO/BPO</option>
+                            <option value="33">IT- Management</option>
+                            <option value="7">IT- Other</option>
+                            <option value="6">IT- Sales and Marketing</option>
+                            <option value="34">IT- Software Services</option>
+                            <option value="5">IT- Support</option>
+                            <option value="23">Legal/Law</option>
+                            <option value="29">Management/Consulting</option>
+                            <option value="25">Manufacturing/Operations</option>
+                            <option value="26">Marketing/Sales/Retail</option>
+                            <option value="35">Mechanical Engineering/Automobiles</option>
+                            <option value="15">Mechanical Engineering/Manufacturing Industries</option>
+                            <option value="36">Mining Engineering</option>
+                            <option value="14">Publications/Books</option>
+                            <option value="30">Restaurant/Food Service</option>
+                            <option value="28">Transportation/Logistics</option>
+                            <option value="37">Public Services</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                        Type:
+                    </label>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="companySector" id="companySector">
+                            <option value="Government" selected="selected">Government</option>
+                            <option value="MNC">MNC</option>
+                            <option value="NGO">NGO</option>
+                            <option value="Private">Private</option>
+                            <option value="Public">Public/PSU</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="companyCategory" id="companyCategory">
+                            <option value="CO" selected="selected">Company</option>
+                            <option value="CONST">Consultancy/Job Agency</option>
+                            <option value="RECTA">Recruitment Agency</option>
+                            <option value="AUTNB">Autonomous Body</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-4 control-label">
+                        Profile:
+                    </label>
+                    <div class="col-sm-8">
+                        <textarea type="text" class="form-control" maxlength="1200" placeholder="Summary profile (max 1200 chars)"
+                                  rows="5" name="companyProfile" id="companyProfile"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+            <div class="modal-footer">
+                <button type="button" name="btnSave" id="btnSave" class="btn btn-primary btn-sm" data-dismiss="modal">Save</button>
+                <button type="button" name="btnClose" id="btnClose" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#btnSave').click(function () {
+        $('#userAlertMsgBody').html('Please wait, saving organization detail...');
+        $.ajax({
+            url: '../adm/dashboard/AddOrganization',
+            type: 'POST',
+            data: {
+                'name': $('#companyname').val(), 'address': $('#companyAddress').val(),
+                'city': $('#companyCity').val(), 'country': $('#companyCountry').val(),
+                'uri': $('#companyUri').val(), 'logoUri': $('#companyLogoUri').val(),
+                'functionalArea': $('#functionalArea').val(), 'category': $('#companyCategory').val(),
+                'sector': $('#companySector').val(), 'profile': $('#companyProfile').val(),
+            },
+            datatype: "json",
+            contenttype: "application/json; charset=utf-8",
+            processdata: false,
+            success: function (result) {
+                $('#userAlertMsgBody').html(result.Message);
+                if (result.Code == 200) {
+                    LoadOrganization(null);
+                }
+            },
+            error: function () {
+                $('#userAlertMsgBody').html('Sorry! Failed to communicate with server.');
+            }
+        });
+
+        $('#manageProfile').show();
+    })
+
+
+    $('#btnClose').click(function () {
+        ResetModalOrganization();
+        $('#manageProfile').hide();
+    });
+
+    function ResetModalOrganization() {
+        $('#companyname').val('');
+        $('#companyAddress').val('');
+        $('#companyCity').val('');
+        $('#companyCountry').val('0');
+        $('#companyUri').val('');
+        $('#companyLogoUri').val('');
+        $('#functionalArea').val('0')
+        $('#companyCategory').val('CO');
+        $('#companySector').val('Government');
+        $('#companyProfile').val('');
+    }
+</script>

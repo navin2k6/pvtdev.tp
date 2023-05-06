@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Resume development tips - Talentsprofile.com";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@*@Html.Partial("../Shared/SignInLink")*@
+
+<div id="page-header">
+    <div class="container">
+        <h3>
+            Resume development:
+            <br />few points you should keep in mind
+        </h3>
+    </div>
+</div>
+
+<section id="about-features">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left">
+                <p>
+                    A resume also called as curriculum vitae (CV), is a document that enlists and summarizes all your career related activities. This document should not be too short, or too long. Also, this should be simple and should not be too bulky. Ideal resume may have of 2-3 pages, increasing in number of page(s) can make it bulky. Your resume is a type of catalog that speaks in absence of you, and advertises your potentials. It is like a mirror image of your skills set, expertise, as well your personality.
+                </p>
+                <p>
+                    Therefore, your resume should always be error free, clean, simple formatted, summarized but complete. A resume may be a primary factor of selection or rejection of a profile.
+                </p>
+                <p>While writing an effective resume, you should keep following things in your mind:</p>
+                <p>1.	<b>Simple:</b> Avoid extra formatting and keep your resume simple and systematic. Eliminate type errors, spelling and grammatical mistakes. Proper page margins with alignments are good to format your resume.</p>
+                <p>2.	<b>Fonts:</b> Use common fonts and avoid uncommon fonts. Many times, the font you have used may not available to employers and therefore, they may not able to read your resume. Times New Roman, Calibri, Arial, Tahoma etc. are few fonts those generally available in all computer systems. Therefore, using such common fonts will be always fruitful.</p>
+                <p>3.	<b>Header and/or footer:</b> Try to add header/footer in your resume. For example, name, page number etc. These do not give any extra weightage to your resume but increase the presentational skill and therefore selection of resume becomes easy.</p>
+                <p>4.	<b>Format:</b> Create and save your document in general formats as - .doc, .docx, .pdf, .rtf etc. Avoid latest or higher version of document format. Consider if viewer does not have the respective compatible version of software, they never able to view you resume.</p>
+                <p>5.	<b>Colors and font size:</b> Better to use black font color and standard font sizes. Headline you can make bold with normal paragraph. Avoid multi colors, images etc. Clean passport size photograph is good to add.</p>
+                <p>6.	<b>Order of resume:</b> Always follow reverse order in your resume i.e. latest things always should be on top.</p>
+                <p>7.	<b>Signature:</b> Good to add full name with date and place at the end of your resume. The date and place indicate your location and last resume updated date. If it is too old, recruiter automatically will ask you to send updated resume.</p>
+                <p>8.	<b>Resume statements:</b> It should always be clear and complete meaning. Avoid confusing and tough words, it is not necessary that resume selectors are as strong in vocabulary as you. Nobody wants extra criticality; your resume may get reject if recruiter unable to understand it clearly.</p>
+                <p>9.	<b>Duplicate items:</b> Avoid repetition or duplicate items in resume. Make it clear and to-the-point, avoid extra explanations.</p>
+                <p>10.	<b>Resume length:</b> Many times, I have seen candidates prepare resume having 6-7 pages, and even more. Believe me, nobody has time to read your 6-7 pages resume, everybody wants simple and summary of your curriculum. Try to summarize your resume in to 2-3 pages, big resume may lead of rejection.</p>
+            </div>
+            @*@{
+                    if (Request.Cookies["talentsprofileUser"] == null)
+                    {
+                        @Html.Partial("../Shared/SideBar")
+                    }
+                }*@
+        </div>
+    </div>
+
+</section>

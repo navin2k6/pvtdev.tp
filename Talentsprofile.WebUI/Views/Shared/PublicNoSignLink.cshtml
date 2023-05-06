@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="" content="job, naukri, service, employment" charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="/../../ui/css/bootstrap.css">
+    <link rel="stylesheet" href="/../../ui/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/../../ui/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/../../ui/css/owl.theme.default.css">
+    <link rel="stylesheet" href="/../../ui/css/style.css">
+    <script src="/../../ui/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+</head>
+
+<body class="@ViewBag.BodyClass">
+    <header id="header">
+        <div class="container">
+            <h1><a href="/">Talent's <span>Profile</span><p id="slogan">Join! Let's discover the world.</p>
+            </a></h1>
+        </div>
+    </header>
+    @{
+        @RenderBody()
+        @Html.Partial("../Shared/FooterLinks")
+    }
+    <script src="/../../ui/js/bootstrap.js"></script>
+    <script src="/../../ui/js/owl.carousel.min.js"></script>
+    <script src="/../../ui/js/main.js"></script>
+    <script src="/../../ui/jsviews/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Dashboard: Talents profile";
+    Layout = "../Shared/Admin.cshtml";
+}
+<div id="contentArea">
+    <table style="width: 96%" cellspacing="4" cellpadding="4">
+        <tbody>
+            <tr>
+                <td style="width: 32%; padding-right:10px">
+                    <div class="employer-block-inner">
+                        <h2>
+                            Scheduled Jobs
+                        </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge"><span id="postedJobs"></span></span>
+                                Posted jobs
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"><span id="jobsRunning"></span></span>
+                                Running
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"><span id="jobsPaused"></span></span>
+                                Paused
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 32%; padding-right:10px">
+                    <div class="employer-block-inner">
+                        <h2>
+                            Walk-ins
+                        </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span class="badge"><span id="postedWalkins"></span></span>
+                                Walk-in events
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"><span id="walkinsThisWk"></span></span>
+                                This week
+                            </li>
+                            <li class="list-group-item">
+                                <span class="badge"><span id="walkinsNxtWk"></span></span>
+                                Upcomming
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td style="width: 32%">
+                    <div class="employer-block-inner">
+                        <h2>
+                            Analytics
+                        </h2>
+                        <ul class="list-group">
+                            <li class="list-group-item"><span class="badge">0</span>Posted</li>
+                            <li class="list-group-item"><span class="badge">0</span>Active</li>
+                            <li class="list-group-item"><span class="badge">0</span>Walk-ins</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: '../Employer/LoadDashboard',
+            type: 'POST',
+            data: {},
+            datatype: "json",
+            contenttype: "application/json; charset=utf-8",
+            processdata: false,
+            success: function (result) {
+                if (result.Status) {
+                    if (result.Data != undefined) {
+                        $("#postedJobs").html(result.Data.PostedJobs);
+                        $("#jobsRunning").html(result.Data.JobsRunning);
+                        $("#jobsPaused").html(result.Data.JobsPaused);
+
+                        $("#postedWalkins").html(result.Data.Walkins);
+                        $("#walkinsThisWk").html(result.Data.WalkinThisWeek);
+                        $("#walkinsNxtWk").html(result.Data.WalkinsUpcomming);
+                    }
+                }
+            },
+            error: function () {
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#dashboard').attr('class', 'active');
+        $('#search').attr('class', '');
+        $('#jobs').attr('class', '');
+        $('#corporate').attr('class', '');
+        $('#accounts').attr('class', '');
+    });
+</script>
+

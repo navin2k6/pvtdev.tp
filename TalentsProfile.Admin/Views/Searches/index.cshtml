@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Manage keywords";
+    Layout = "../Shared/Admin.cshtml";
+}
+
+<div class="form-horizontal">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Searched Keyword(s):</h3>
+        </div>
+        <div class="col-md-6" style="text-align:right; vertical-align:bottom; padding-top:20px; padding-right:40px">
+            <a href="#" data-toggle="modal" data-target="#manageProfile"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i></a>
+            &nbsp;<i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+<div class="clearfix">&nbsp;</div>
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Job Title</th>
+            <th scope="col">Organization</th>
+            <th scope="col">Status</th>
+            <th scope="col">Posted On</th>
+        </tr>
+    </thead>
+    <tbody id="jobsRows">
+        <tr><td colspan="5">No records available</td></tr>
+    </tbody>
+</table>

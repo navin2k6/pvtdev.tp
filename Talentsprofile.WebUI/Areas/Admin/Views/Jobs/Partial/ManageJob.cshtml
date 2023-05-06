@@ -1,0 +1,270 @@
+﻿@model TalentsProfile.DTO.Employers.JobDescription
+
+<div class="modal-header">
+    <h4 class="modal-title">Add New Job</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" name="btnClose">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div id="msgAlert" role="alert" style="display: none" class="alert alert-warning alert-dismissible ">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+        </button>
+    </div>
+    <div id="divAddNew">
+        @*<button type="submit" class="btn btn-primary btn-sm" id="btnExisting">
+                View All
+            </button>*@
+
+        <form class="form-horizontal" id="formPostJob" role="form" action="/adm/jobs/index" method="post">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">
+                        Job Title:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.JobTitle, new { @class = "form-control", @id = "txtTitle", @placeholder = "Title of job" })
+                        <span class="glyphicon glyphicon-ok form-control-feedback" style="display: none">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-3 control-label">
+                        Job Code:
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.JobRefCode, new { @class = "form-control", @id = "txtJobCode", @placeholder = "Job code, if any" })
+                        @Html.HiddenFor(m => m.JobId)
+                    </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="JobType" name="JobType">
+                            <option value="0" selected="selected">Job Type</option>
+                            <option value="permanent">Permanent</option>
+                            <option value="contract">Contractual</option>
+                        </select>
+                        <input type="hidden" name="IsWalkIn" value="false" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Required Skills Set:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.SkillsSet, new { @class = "form-control", @id = "txtSkills", @placeholder = "Required skills, comma separated" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Designation:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.DesignationFor, new { @class = "form-control", @id = "txtPost", @placeholder = "Name of post" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Work Location:
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.JobLocation, new { @class = "form-control", @id = "txtLocation", @placeholder = "City name" })
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="JobCountry" name="JobCountry" class="form-control">
+                            @{
+                                List<TalentsProfile.DTO.ListLookup> countries = TalentsProfile.BAL.Common.GetListValue(TalentsProfile.DTO.ListType.COUNTRY.ToString());
+                                foreach (TalentsProfile.DTO.ListLookup country in countries)
+                                {
+                                    if (Model != null && Model.JobCountry == country.Id)
+                                    {
+                                        <option value="@country.Id" selected="selected">@country.Description</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@country.Id">@country.Description</option>
+                                    }
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Qualification:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.Education, new { @class = "form-control", @id = "txtQualification", @placeholder = "Required qualification" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Required:
+                    </label>
+                    <div class="col-sm-5" style="padding-top: 5px">
+                        <input type="radio" name="experience" value="1" checked="checked" />&nbsp;Fresher
+                        <input type="radio" name="experience" value="2" style="margin-left: 50px" />&nbsp;Experienced
+                    </div>
+                </div>
+                <div class="form-group" id="divExperience" style="display: none">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.MinExperience, new { @class = "form-control", @id = "txtMinExp", @placeholder = "Min. experience" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.MaxExperience, new { @class = "form-control", @id = "txtMaxExp", @placeholder = "Max. experience" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Salary Range:
+                    </label>
+                    <div class="col-sm-4">
+                        <select id="SalaryType" name="SalaryType" class="form-control">
+                            <option selected="selected">Select</option>
+                            <option value="NEGOTIABLE">Negotiable</option>
+                            <option value="MKT_STD">As per industry norms</option>
+                            <option value="CUSTOM">Custom</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group" id="divSalary" style="display: none">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                    </label>
+                    <div class="col-sm-2">
+                        <select id="CurrencyType" name="CurrencyType" class="form-control">
+                            <option selected="selected" value="0">Select</option>
+                            <option value="1">INR</option>
+                            <option value="2">USD</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.TextBoxFor(m => m.MinSalary, new { @class = "form-control", @id = "txtMinSalary", @placeholder = "Min. salary" })
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.TextBoxFor(m => m.MaxSalary, new { @class = "form-control", @id = "txtMaxSalary", @placeholder = "Max. salary" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Job Description:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @id = "txtDesc", @placeholder = "Write summary of the job" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Publish Job On:
+                    </label>
+                    <div class="col-sm-5" style="padding-top: 5px">
+                        <input type="radio" name="publishType" value="1" checked="checked" />&nbsp;Immediate
+                        <input type="radio" name="publishType" value="2" style="margin-left: 50px" />&nbsp;Selected
+                        Date
+                    </div>
+                    <div class="col-sm-3" id="divPublishDate" style="display: none">
+                        @Html.TextBoxFor(m => m.PublishOn, new { @class = "form-control", @id = "txtPostDate", @placeholder = "With effect from" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Automatically Close After:
+                    </label>
+                    <div class="col-sm-8">
+                        @Html.TextBoxFor(m => m.ExpireOn, new { @class = "form-control", @id = "txtCloseDate", @placeholder = "Select date" })
+                    </div>
+                </div>
+                <!--Contact detail-->
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        Contact Detail:
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.ContactPerson, new { @class = "form-control", @id = "txtName", @placeholder = "Name of contact person" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.ContactEmail, new { @class = "form-control", @id = "txtEmail", @placeholder = "Email of contact person" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                    </label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.ContactPhone, new { @class = "form-control", @id = "txtPhone", @placeholder = "Phone of contact person" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(m => m.WebUrl, new { @class = "form-control", @id = "txtUrl", @placeholder = "Website URL" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-5">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            Save As Draft
+                        </button>
+                        &nbsp;&nbsp;<button type="submit" class="btn btn-primary btn-sm" id="btnPublish">
+                            Publish
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+        var date = new Date();
+        date.setDate(date.getDate() + 1);
+        $('#txtCloseDate').datepicker({
+            startDate: date
+        });
+    });
+
+    // When the document is ready
+    $(document).ready(function () {
+        var date = new Date();
+        date.setDate(date.getDate());
+        $('#txtPostDate').datepicker({
+            startDate: date
+        });
+    });
+
+    $(document).ready(function () {
+        var job = window.location.href.slice(window.location.href.indexOf('?') + 1).split('=');
+        if (job != undefined) {
+            if (job[0] == 'edit' || job[0] == 'add') {
+                $("#divAddNew").show();
+                $("#divExisting").hide();
+            }
+            else
+                LoadPostedJobs();
+        }
+    });
+
+    $("#btnAddNew").click(function () {
+        window.location.href = '../employer/postjob?add=new';
+        $("#divAddNew").show();
+        $("#divExisting").hide();
+    });
+
+
+    $("#btnExisting").click(function () {
+        $("#divExisting").show();
+        $("#divAddNew").hide();
+        LoadPostedJobs();
+    });
+
+    $("#SalaryType").change(function () {
+        if ($("#SalaryType").val() == 'CUSTOM') {
+            $('#txtMinSalary').val('');
+            $('#txtMaxSalary').val('');
+            $('#txtMaxSalary').val('');
+            $('#CurrencyType').val('0');
+            $("#divSalary").show();
+        }
+        else {
+            $("#divSalary").hide();
+        }
+    });
+</script>

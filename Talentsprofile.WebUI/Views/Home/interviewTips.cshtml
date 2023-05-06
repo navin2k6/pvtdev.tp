@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Interview tips - Talentsprofile.com";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@*@Html.Partial("../Shared/SignInLink")*@
+
+<div id="page-header">
+    <div class="container">
+        <h3>Interview tips</h3>
+    </div>
+</div>
+
+<section id="about-features">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left">
+                <p>
+                    Sorry! Currently this section seems no data.
+                </p>
+            </div>
+            @*@{
+                    if (Request.Cookies["talentsprofileUser"] == null)
+                    {
+                        @Html.Partial("../Shared/SideBar")
+                    }
+                }*@
+        </div>
+    </div>
+
+</section>

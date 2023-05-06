@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Search organization - Talentsprofile.com";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+@*@Html.Partial("../Shared/SignInLink")*@
+
+<div id="page-header">
+    <div class="container">
+        <h3>Connect with @HttpContext.Current.Request.QueryString["val"]</h3>
+    </div>
+</div>
+
+<section id="jobs-search">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="widget">
+                    <h3>Search Employers</h3>
+                    <div class="job-overview">
+                        <ul>
+                            <li>
+                                <i class="fa fa-calendar-minus-o"></i>
+                                <div>
+                                    <strong>Categories</strong>
+                                    <div class="clearfix"></div>
+                                    <input type="checkbox" name="postedBy" value="company" id="chkCompany" />
+                                    Company
+                                    <br />
+                                    <input type="checkbox" name="postedBy" value="consultant"
+                                           id="chkConsultant" />
+                                    Consultancy
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <div>
+                                    <strong>Location:</strong>
+                                    <input type="email" class="form-control" id="city" placeholder="City" />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>&nbsp;</span>
+                                    <button type="submit" class="btn btn-primary btn-sm" id="btnSearchAftrLogin">
+                                        Search
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8" id="af-left">
+                <div class="filterbar">
+                    @*<div>
+                        <h5 id="resultCount">No data found</h5>
+                    </div>*@
+                    <div class="item-block">
+                        <header>
+                            <span>Organization</span>
+                        </header>
+                        <div class="item-body">
+                            <div class="skills">Skills Set:<p>Description</p></div>
+                        </div>
+                        <footer>
+                            <input type="submit" class="btn btn-primary btn-sm" name="btnViewJob" value="View" url="/search/jobs/desc/' + result.Jobs[obj].JobId + '?job=' + result.Jobs[obj].JobTitle.toLowerCase() + '" />&nbsp;&nbsp;
+                        </footer>
+                    </div>
+                    <div class="sortby-sec" id="filterAction" style="display: none">
+                        <span>Sort by</span>
+                        <select data-placeholder="Most Recent" class="chosen">
+                            <option>Most Relevant</option>
+                            <option>Posted Date</option>
+                            <option>Experience</option>
+                        </select>
+                        <select data-placeholder="20 Per Page" class="chosen">
+                            <option>30 Per Page</option>
+                            <option>40 Per Page</option>
+                            <option>50 Per Page</option>
+                            <option>60 Per Page</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="job-listing clearfix" id="resultSet">
+
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</section>
+<link href="../../../Scripts/jquery-ui.css" rel="stylesheet" />
+<script type="text/javascript" src="../../../Scripts/jquery-ui.js"></script>
+<script type="text/javascript" src="../../../Scripts/searching-keywords.js"></script>

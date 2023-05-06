@@ -1,0 +1,9 @@
+﻿{
+"data":{
+"cities":"Delhi/NCR, Noida, Gurugram/Gurgaon, New Delhi, Mumbai/Bombay, Chennai/Madras, Bengaluru/Bangalore, Hyderabad/Secunderabad, Chandigarh, Kokata/Calcutta,
+Pune, Mysuru/Mysore, Bhilai, Bhubaneswar, Kurla, Thane, Nagpur, Bilaspur, Indore, Bhopal, Cuttak, Guwahati, Coimbatore, Panji, Jaipur, Kanpur,
+Patna, Prayagraj/Allahabad, Ranchi, Malda, Tatanagar/Jamshedpur, Bokaro, Jhansi, Aligarh, Dibrugarh, Nasik, Jabalpur",
+"b_degree":"BE/BTech, BCA, BEd, BBA, BSc, B.Com, BPhil, BA,  MBBS, BDS, BA LLB, BHM, Graduation, Diploma",
+"pg_degree":"ME/MTech, CDAC, MCA, MEd, MBA, MS/MSc, M.Com, MPhil, MA, MS (Master of Surgery), MD (Doctor of Medicine), MA LLB, MHM, PGDBA, Phd"
+}
+}

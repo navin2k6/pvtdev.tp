@@ -1,0 +1,269 @@
+﻿@{
+    ViewBag.BodyClass = "homepage";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+
+<div class="site-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="banner-content">
+                    <h1>
+                        Search more than 20,000 jobs
+                        <br>
+                        across the globe!
+                    </h1>
+                    <p>
+                        Get notifications for all types of jobs, and hatch your dream job.<br />
+                        Download talent’s profile, that best fits your job description.
+                    </p>
+                </div>
+                <div class="job-search">
+                    <div class="form-group col-md-6 padding-left b-r radius">
+                        <input type="text" class="form-control" placeholder="Skill set or keywords" id="keywords">
+                        <div class="search_icon"><span class="ti-briefcase"></span></div>
+                    </div>
+                    <div class="form-group col-md-6 padding-left radius2">
+                        <input type="text" class="form-control" placeholder="City" id="city">
+                        <div class="search_icon"><span class="ti-location-pin"></span></div>
+                    </div>
+                    <div class="btn-search">
+                        <input type="submit" id="btnSearch" class="btn btn-default" value="Search Jobs" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="af-left">
+                <h3>What's New in Talent's Profile?</h3>
+                <ul>
+                    @*<li>
+                            <div class="icon-holder"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></div>
+                            <div class="text-holder">
+                                <h5>Free Resume Development</h5>
+                                <p>
+                                    Build your professional resume just in
+
+                                    5 mins, download PDF format.
+                                </p>
+                            </div>
+                        </li>*@
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-bullhorn" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Walk-in Events</h5>
+                            <p>Get notifications for all walk-in events, matching to your profile.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-bell" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Job Notifications</h5>
+                            <p>Subscribe and get government job notifications as soon it is posted on this platform.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-industry" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Explore Companies</h5>
+                            <p>Get in-touch with your dream company. Get notifications when they post a job matching your profile.</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-users" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Search Consultancies</h5>
+                            <p>Forward your resume to thousands of consultancies, to get your dream job.</p>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-file-text" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Free Resume Tips</h5>
+                            <p>Get free resume tips and boost your resume, increase resume selection.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-holder"><i class="fa fa-line-chart" aria-hidden="true"></i></div>
+                        <div class="text-holder">
+                            <h5>Career Guides</h5>
+                            <p>Subscribe and get government job notifications as soon it is posted on this platform.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="free-resume">
+    <div class="container">
+        <div class="row">
+            <div class="image-column col-md-5 col-sm-12 col-xs-12">
+                <img src="/ui/images/cv.png" alt="">
+            </div>
+            <div class="content-column col-md-7 col-sm-12 col-xs-12">
+                <p>
+                    <h3>Making a professional resume is pretty simple now.</h3>
+                    <h4>Register, create profile and download your professional resume.</h4>
+                </p>
+                <a href="/talent/signup" class="btn btn-white btn-lg">Build Your Resume Now!</a>
+            </div>
+            @*<div class="content-column col-md-7 col-sm-12 col-xs-12">
+                    <p>
+                        <h3>I have my resume. Looking for better career oportunity.</h3>
+                        <h4>Upload your resume to share it direct to company HR desk.</h4>
+                    </p>
+                    <a href="/talent/resume/upload" class="btn btn-white btn-lg">Upload Resume Now!</a>
+                </div>*@
+
+        </div>
+    </div>
+</section>
+
+<section id="jobs-categories">
+    <div class="container">
+        <div class="col-md-12">
+            <h3 class="sec-title">Popular Categories</h3>
+            <ul id="popular-categories" class="clearfix">
+                <li><a href="#" value="engineering" name="liSearch"><i class="fa fa-gears" aria-hidden="true"></i>Engineering</a> </li>
+                <li><a href="#" value="retail" name="liSearch"><i class="fa fa-shopping-bag" aria-hidden="true"></i>Retail</a> </li>
+                <li><a href="#" value="healthcare" name="liSearch"><i class="fa fa-plus-square" aria-hidden="true"></i>Healthcare</a> </li>
+                <li><a href="#" value="education-training" name="liSearch"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Education / Training</a> </li>
+                <li><a href="#" value="facilities-hospitality" name="liSearch"><i class="fa fa-hotel" aria-hidden="true"></i>Facilities / Hospitality</a> </li>
+                <li><a href="#" value="accounts-finance-banking" name="liSearch"><i class="fa fa-line-chart" aria-hidden="true"></i>Accounts / Finance</a> </li>
+                <li><a href="#" value="restaurant-food service-catering" name="liSearch"><i class="fa fa-cutlery" aria-hidden="true"></i>Restaurant / Food Service</a> </li>
+                <li><a href="#" value="transportation-logistics" name="liSearch"><i class="fa fa-plane" aria-hidden="true"></i>Transportation / Logistics</a> </li>
+            </ul>
+            @*<div id="brwsAllCat"><a href="#" class="btn btn-blue btn-lg" data-toggle="modal" data-target="#allCategories">Browse All Categories</a></div>*@
+        </div>
+    </div>
+</section>
+
+<section id="newsletter-wrapper" class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="newsletter_text">
+                    <h6>Job Notifications<span>Get job notifications most suited to your profile.<br />Subscribe now, it's free!</span></h6>
+                    @*<img src="ui/images/news_logo.png" class="img-responsive" alt="news_logo">*@
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <div class="newsletter_field">
+                    <div id="div_txtUserEmail">
+                        <i class="fa fa-envelope-o"></i>
+                        <input name="txtUserEmail" id="txtUserEmail" class="form-control" placeholder="Enter email id" type="email" />
+                        <input type="hidden" value="signup" name="reg_action" />
+                        <span class="glyphicon glyphicon-error form-control-feedback" style="display: none"
+                              id="span_txtUserEmail"></span>
+                    </div>
+                    <button type="submit" id="btnSubscribe" data-toggle="modal" data-target="#userAlertMsg">SUBSCRIBE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal Subscription-->
+<div class="modal fade" id="userAlertMsg" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="userAlertMsgTitle">In Process</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" name="btnClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="msgAlert" role="alert" style="display: none" class="alert alert-warning alert-dismissible ">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 form-horizontal" id="userAlertMsgBody">
+                        Please wait, processing your request...
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" name="btnClose" class="btn btn-primary btn-sm" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- All categories -->
+<!-- Modal Subscription-->
+<div class="modal fade" id="allCategories" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="">Job Categories</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" name="btnClose">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="" role="alert" style="display: none" class="alert alert-warning alert-dismissible ">
+                    <button type="button" class="close" data-dismiss="alert">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="form-group">
+                            <div class="col-sm-3">
+                                <ul>
+                                    <li><a href=""><i class="fa fa-gears" aria-hidden="true">&nbsp;</i>Engineering</a> </li>
+                                    <li><a href=""><i class="fa fa-shopping-bag" aria-hidden="true">&nbsp;</i>Retail</a> </li>
+                                    <li><a href=""><i class="fa fa-plus-square" aria-hidden="true">&nbsp;</i>Healthcare</a> </li>
+                                    <li><a href=""><i class="fa fa-graduation-cap" aria-hidden="true">&nbsp;</i>Education/Training</a> </li>
+                                    <li><a href=""><i class="fa fa-hotel" aria-hidden="true">&nbsp;</i>Facilities/Hospitality</a> </li>
+                                    <li><a href=""><i class="fa fa-line-chart" aria-hidden="true">&nbsp;</i>Banking/Accounts/Finance</a> </li>
+                                    <li><a href=""><i class="fa fa-cutlery" aria-hidden="true">&nbsp;</i>Restaurant/Food Service</a> </li>
+                                    <li><a href=""><i class="fa fa-plane" aria-hidden="true">&nbsp;</i>Transportation/Logistics</a> </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4">
+                                <ul>
+                                    <li><a href=""><i class="fa fa-user" aria-hidden="true">&nbsp;</i>Human Resource</a> </li>
+                                    <li><a href=""><i class="fa fa-laptop" aria-hidden="true">&nbsp;</i>Information Technologies</a> </li>
+                                    <li><a href=""><i class="fa fa-black-tie" aria-hidden="true">&nbsp;</i>Sales & Services</a> </li>
+                                    <li><a href=""><i class="fa fa-industry" aria-hidden="true">&nbsp;</i>Production/Manufacturing</a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" name="btnClose" class="btn btn-primary btn-sm" data-dismiss="modal">OK</button>
+                <button type="button" name="btnClose" class="btn btn-primary btn-sm" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="/ui/css/jquery-ui.css" />
+<script type="text/javascript" src="/ui/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/ui/jsviews/SearchJob.js"></script>
+<script type="text/javascript" src="/ui/jsviews/searching-keywords.js"></script>
+<script type="text/javascript" src="/ui/jsviews/Common.js"></script>
+
+<script type="text/javascript">
+    $('[name=liSearch]').click(function () {
+        qry = "key=" + $(this).attr('value');
+        SearchFor();
+    })
+</script>

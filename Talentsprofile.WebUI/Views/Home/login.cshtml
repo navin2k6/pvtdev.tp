@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Login to Talentsprofile.com";
+    ViewBag.BodyClass = "loginpage";
+    Layout = "~/Views/Shared/PublicNoSignLink.cshtml";
+}
+
+@*<div id="page-header">
+    <div class="container">
+        <h3>&nbsp;</h3>
+    </div>
+</div>
+
+<section id="about-features">
+    <div class="container">
+        <div class="row">*@
+<div class="login-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 loginBanner-content" id="af-left">
+                <h3>To login, please enter:</h3>
+                <hr />
+                @{
+                    var display = "none";
+                    if (!String.IsNullOrEmpty(Convert.ToString(ViewData["info"])))
+                    {
+                        display = "block";
+                    <div class="alert alert-danger" style="display: @display">
+                        <p>@ViewData["info"]</p>
+                    </div>
+                    }
+                }
+                <div class="form-horizontal">
+                    <div id="msgAlert" role="alert" style="display: none" class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                            Email:</label>
+                        <div class="col-sm-8">
+                            <input type="email" placeholder="Email" name="email" id="email" class="form-control" maxlength="50" onblur="ValidateCtrl('email','Email')"
+                                autocomplete="on" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                            Password:</label>
+                        <div class="col-sm-8">
+                            <input type="password" placeholder="Password" name="pwd" id="password" class="form-control" maxlength="20" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                        </label>
+                        <div class="col-sm-8">
+                            <span>
+                                <input type="checkbox" name="rememberMe" />
+                                Remember me</span><span style="color: #428bca; padding-left: 15px"><a href="forgotpassword">Password
+                                Help</a></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">
+                        </label>
+                        <div class="col-sm-8">
+                            <button type="submit" class="btn btn-primary btn-sm" id="signIn">
+                                Login</button><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @{
+                if (Request.Cookies["talentsprofileUser"] == null)
+                {
+                @Html.Partial("../Shared/SideBar")
+                }
+            }
+        </div>
+    </div>
+    <div style="height: 50px"></div>
+</div>
+@* </div>
+    </div>
+</section>*@
+
+<link href="/ui/css/jquery-ui.css" rel="stylesheet" />
+<script src="/ui/jsviews/signup.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    $('#signIn').click(function () {
+        LoginToProfile();
+    });
+
+    $('#email').keypress(function (e) {
+        if (e.keyCode == 13)
+            LoginToProfile();
+    });
+
+    $('#password').keypress(function (e) {
+        if (e.keyCode == 13)
+            LoginToProfile();
+    });
+</script>

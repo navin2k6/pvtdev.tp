@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "TalentsProfile Privacy Policies";
+    Layout = "~/Views/Shared/Public.cshtml";
+}
+<div id="page-header">
+    <div class="container">
+        <h3></h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="af-left">
+            <div class="widget" style="padding:0 10px;">
+                <p><i class="fa fa-home"></i><a href="/"> Home </a>| Privacy Policy</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="about-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" id="af-left" style="padding-right:7%">
+                <h2>Privacy Policies</h2>
+                <hr />
+
+                <div style="padding-left:5%">
+                    <h4>Data policy</h4>
+                    <p>1.	User data available in to our system is given by user directly or indirectly. User can update their data anytime by logging, Talents Profile is not responsible to update any user’s data anyhow. If user feels uncomfortable, they are free to delete and/or suspend their account anytime without prior notice to Talents Profile.</p>
+                    <p>2.	User data are secured and we do not share it with third party. Candidate’s profile data are viewable and downloadable to employer or hiring team.</p>
+                    <p>3.	User can manage settings by their own and based on the same user data will be viewable to other.</p>
+                    <p>4.	User can subscribe or unsubscribe for notifications. Unsubscribed user will not receive any information for which the user has opted-out.</p>
+                    <p>5.	User logging with third party, are authorizing to share data from third party to Talents Profile. Talents Profile reserves rights to use such data.</p>
+                    <p>6.	Talents Profile does not ask for any vital data e.g. bank and card details etc. We do not keep such user’s information in our database. In case of payment gateway(s), we may persist only transaction id and related descriptions of payment made.</p>
+
+                    <div class="clearfix">&nbsp;</div>
+                    <h4>Cookie policy</h4>
+                    <p>Talents Profile is cookie based website and may use client’s system to manage data temporarily. Also, to serve better search result, we may use client’s location, or network properties.</p>
+                </div>
+            </div>
+            @{
+                if (Request.Cookies["talentsprofileUser"] == null)
+                {
+                    @Html.Partial("../Shared/SideBar")
+                }
+            }
+        </div>
+    </div>
+</section>
